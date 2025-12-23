@@ -273,7 +273,8 @@ export default function Orb({
       program.uniforms.hoverIntensity.value = hoverIntensity;
 
       const effectiveHover = forceHoverState ? 1 : targetHover;
-      program.uniforms.hover.value += (effectiveHover - program.uniforms.hover.value) * 0.1;
+      // Smooth lerp factor (0.03 instead of 0.1) to prevent flickering
+      program.uniforms.hover.value += (effectiveHover - program.uniforms.hover.value) * 0.03;
 
       if (rotateOnHover && effectiveHover > 0.5) {
         currentRot += dt * rotationSpeed;

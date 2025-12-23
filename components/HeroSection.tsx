@@ -73,7 +73,7 @@ export function HeroSection({ className }: HeroSectionProps) {
   return (
     <section 
       className={cn(
-        'relative min-h-screen w-full overflow-hidden',
+        'relative w-full overflow-hidden flex-1',
         'flex items-center justify-center',
         className
       )}
